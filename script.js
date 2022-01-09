@@ -1,15 +1,15 @@
 async function loadLatestVersion() {
-    res = await fetch('https://api.github.com/repos/catarium/catarium.github.io/releases/latest', {method: 'GET'});
+    res = await fetch('https://api.github.com/repos/catarium/bilig_dictionary/releases/latest', {method: 'GET'});
     res = await res.json()
     if (Boolean(res)) {
         download_link = document.getElementById('latest_link')
-        download_link.href = `https://github.com/catarium/catarium.github.io/releases/latest/download/${res.assets[0].name}`
+        download_link.href = `https://github.com/catarium/bilig_dictionary/releases/latest/download/${res.assets[0].name}`
     }
 }
 
 
 async function loadVersions() {
-    res = await fetch('https://api.github.com/repos/catarium/catarium.github.io/releases', {method: 'GET'});
+    res = await fetch('https://api.github.com/repos/catarium/bilig_dictionary/releases', {method: 'GET'});
     res = await res.json()
     console.log(res)
     if (Boolean(res.length)) {
@@ -22,7 +22,7 @@ async function loadVersions() {
             let version_link = document.createElement('a')
             version_link.className = 'version-download-link'
             version_link.innerHTML = 'Скачать'
-            version_link.href = `https://github.com/catarium/catarium.github.io/releases/download/${element.tag_name}/${element.assets[0].name}`
+            version_link.href = `https://github.com/catarium/bilig_dictionary/releases/download/${element.tag_name}/${element.assets[0].name}`
 
             version_item.appendChild(version_title)
             version_item.appendChild(version_link)
