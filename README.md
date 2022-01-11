@@ -1,1 +1,1 @@
-# Bilig dictionary
+https://catarium.github.io/bilig_dictionary/
