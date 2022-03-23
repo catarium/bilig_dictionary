@@ -3,6 +3,7 @@ async function loadLatestVersion() {
     res = await res.json()
     if (Boolean(res)) {
         download_link = document.getElementById('latest_link')
+        download_link.innerHTML = `Скачать последнюю версию ${res["tag_name"]}`
         download_link.href = `https://github.com/catarium/bilig_dictionary/releases/latest/download/${res.assets[0].name}`
     }
 }
